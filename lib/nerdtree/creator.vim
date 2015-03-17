@@ -160,6 +160,9 @@ function! s:Creator.createMirror()
         let bufferName = values(options)[0]
     else
         call nerdtree#echo("No trees to mirror")
+
+        " Fall back on toggle if no mirror can be made.
+        call g:NERDTreeCreator.TogglePrimary('')
         return
     endif
 
